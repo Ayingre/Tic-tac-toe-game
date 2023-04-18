@@ -1,0 +1,312 @@
+html, body{
+    background: #1A2A33;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500px;
+}
+
+.new-game-menu{
+    display: none;
+    margin: 119px auto 0 ;
+    height: 429px;
+    width: 327px;
+    /* background-color: blue; */
+}
+
+.open-close-icon{
+    height: 32px;
+    width: 72px;
+    /* background-color: yellow; */
+    margin: 0 auto;
+}
+
+.pick-player-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 205px;
+    width: 327px;
+    margin: 32px 0 0 0;
+    text-align: center;
+    background-color: #1F3641;
+    border-radius: 15px;
+    box-shadow: inset 0px -8px 0px #10212A;
+}
+
+.pick-player-paragraph-1{
+    margin: 20px 0 0 0;
+}
+
+.players-selection-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #1A2A33;
+    margin: 24px auto 17px;
+    padding: 9px 8px;
+    width: 279px;
+    height: 72px;
+}
+
+ svg{
+    display: inline-block;
+}
+
+.icon1{
+    display: inline-block;
+    /* background-color: blue; */
+    /* text-align: center;
+    line-height: 32px;
+    height: 32px;
+    width: 32px; */
+    margin: 13px 0 0 58px;
+}
+
+.icon2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 132px;
+    height: 54px;
+    margin: 0 0 0 49px;
+    border-radius: 10px;
+    background-color:#A8BFC9;
+}
+
+.close-icon{
+    margin: 11px 0 0 0;
+} 
+
+/* New Game */
+
+.new-game-board{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 0 0 0;
+}
+
+.vs-cpu{
+    margin: 0 0 16px 0;
+}
+
+.new-game-button{
+    height:56px;
+    width: 327px;
+    border-radius: 15px;
+    border: none;
+    background: #F2B137;
+    box-shadow: inset 0px -8px 0px #CC8B13;
+
+}
+
+.vs-player{
+    background: #31C3BD;
+    box-shadow: inset 0px -8px 0px #118C87;
+}
+
+
+/* Game board start */
+/* .game-board-start{
+    display: none;
+} */
+
+.game-board-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    width: 328px;
+    margin: 24px auto 0;
+    /* background-color: blue; */
+}
+
+.player-x-turn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #1F3641;
+    width: 96px;
+    height: 40px;
+    box-shadow: inset 0px -4px 0px #10212A;
+    border-radius: 5px; 
+}
+
+.player-x-svg{
+    margin: 10px 0 0 0;
+}
+
+.reload-svg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 5px;
+}
+
+.game-baord-cells{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: blue; */
+    height: 412px;
+    width: 328px;
+    margin: 64px auto 0;
+}
+
+.cells{
+    height: 96px;
+    width: 96px;
+    background: #1F3641;
+    box-shadow: inset 0px -8px 0px #10212A;
+    border-radius: 10px;
+}
+
+.score-cell{
+    height: 64px;
+    width: 96px;
+    background-color: green;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+}
+
+.cell-10{
+    background: #31C3BD;
+}
+
+.cell-11{
+    background: #A8BFC9;
+}
+
+.cell-12{
+    background: #F2B137;
+}
+
+
+
+/* Scores message */
+
+/* .win, .player2-wins, .o-wins, .tie{
+    display: none;
+} */
+
+.o-wins-background{
+    height: 615px;
+    width: 375px;
+    background: rgba(0, 0, 0, 0.5);
+    mix-blend-mode: normal;
+    margin: 0 auto ;
+    position: absolute;
+    z-index: 50;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 219px ;
+}
+
+.messages, .solo{
+    visibility: hidden;
+}
+
+.o-wins, .x-wins{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto ;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    top: 225px;
+    bottom: 219px ;
+    height: 228px;
+    width: 375px;
+    background: #1F3641;
+}
+
+
+.wins-loss-message{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: pink; */
+    height: 30px;
+    width: 280px;
+}
+
+.you-lost-message, .you-won{
+    font-weight: 700px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #A8BFC9;
+    
+}
+
+.o-wins-icon, .x-wins-icon{
+    margin:15px 0 0 0;
+}
+
+.o-win-message, .x-win-message{
+    font-weight: 700px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #F2B137;
+}
+
+.restart-message{
+    font-weight: 700px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #A8BFC9;
+}
+
+.x-win-message{
+    color: #31C3BD;
+}
+
+.score-action{
+    margin: 24px 0 28px 0;
+}
+
+.quit, .cancel{
+    width: 76px;
+    height: 52px;
+    background: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 10px;
+    border: none;
+    margin: 0 16px 0 0;
+}
+
+.next-round, .restart{
+    Width: 146px;
+    Height: 52px;
+    background: #F2B137;
+    box-shadow: inset 0px -4px 0px #CC8B13;
+    border-radius: 10px;
+    border: none;
+}
+
+.restart-screen{
+    width: 139px;
+    height: 52px;
+    border-radius: 10px;
+    border: none;
+    margin: 0 16px 0 0;
+}
