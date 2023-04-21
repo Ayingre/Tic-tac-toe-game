@@ -26,7 +26,7 @@ html, body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 205px;
+    height: 215px;
     width: 327px;
     margin: 32px 0 0 0;
     text-align: center;
@@ -35,8 +35,24 @@ html, body{
     box-shadow: inset 0px -8px 0px #10212A;
 }
 
-.pick-player-paragraph-1{
-    margin: 20px 0 0 0;
+.pick-player-paragraph{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.paragraph-1{
+    margin: 0 0 0 0;
+    color: #A8BFC9;
+}
+
+.paragraph-2{
+    margin: 17px 0 0 0;
+    color: #A8BFC9;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    font-weight: 500;
 }
 
 .players-selection-icons{
@@ -45,10 +61,11 @@ html, body{
     justify-content: center;
     align-items: center;
     background-color: #1A2A33;
-    margin: 24px auto 17px;
+    margin: 24px auto 0;
     padding: 9px 8px;
     width: 279px;
     height: 72px;
+    border-radius: 10px;
 }
 
  svg{
@@ -57,12 +74,9 @@ html, body{
 
 .icon1{
     display: inline-block;
-    /* background-color: blue; */
-    /* text-align: center;
-    line-height: 32px;
-    height: 32px;
-    width: 32px; */
-    margin: 13px 0 0 58px;
+    height: 42px;
+    width: 42px;
+    margin: 0 auto;
 }
 
 .icon2{
@@ -77,8 +91,19 @@ html, body{
     background-color:#A8BFC9;
 }
 
-.close-icon{
-    margin: 11px 0 0 0;
+.fill-x{
+    fill: #A8BFC9;
+    stroke: #A8BFC9;
+}
+
+.fill-o{
+    fill: #1A2A33;
+    stroke: #1A2A33;
+}
+
+.close-icon, .open-icon{
+    height: 42px;
+    width: 42px;
 } 
 
 /* New Game */
@@ -96,12 +121,16 @@ html, body{
 }
 
 .new-game-button{
-    height:56px;
+    height:66px;
     width: 327px;
     border-radius: 15px;
     border: none;
     background: #F2B137;
     box-shadow: inset 0px -8px 0px #CC8B13;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
 
 }
 
@@ -139,8 +168,15 @@ html, body{
     border-radius: 5px; 
 }
 
+.player-x-text{
+    font-weight: 700px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #A8BFC9;
+}
+
 .player-x-svg{
-    margin: 10px 0 0 0;
+    margin: 0 0 0 0;
 }
 
 .reload-svg{
@@ -168,6 +204,10 @@ html, body{
 }
 
 .cells{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 96px;
     width: 96px;
     background: #1F3641;
@@ -182,6 +222,10 @@ html, body{
     border-radius: 10px;
     box-shadow: none;
     border: none;
+    font-weight: 500px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #1A2A33;
 }
 
 .cell-10{
@@ -205,7 +249,7 @@ html, body{
 } */
 
 .o-wins-background{
-    height: 900px;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
     mix-blend-mode: normal;
     margin: 0 auto ;
@@ -217,11 +261,16 @@ html, body{
     bottom: 219px ;
 }
 
-.messages, .solo{
+.messages-o, .messages-x, 
+.messages-x-restart, 
+.messages-o-multi, .messages-x-multi, 
+.messages-x-multi-restart, 
+.solo{
     visibility: hidden;
 }
 
-.o-wins, .x-wins{
+.o-wins, .x-wins, .x-wins-restart, 
+.o-wins-multi, .x-wins-multi, .x-wins-multi-restart{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -234,7 +283,7 @@ html, body{
     top: 225px;
     bottom: 219px ;
     height: 228px;
-    width: 390px;
+    width: 412px;
     background: #1F3641;
 }
 
@@ -283,6 +332,13 @@ html, body{
     margin: 24px 0 28px 0;
 }
 
+.score-screen{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
 .quit, .cancel{
     width: 76px;
     height: 52px;
@@ -308,4 +364,254 @@ html, body{
     border-radius: 10px;
     border: none;
     margin: 0 16px 0 0;
+}
+
+/* Game board cell icons  */
+.cell-icons{
+    height: 60px;
+    width: 60px;
+}
+
+.board-cell-x{
+    display: none;
+    fill: #31C3BD ;
+}
+
+/* .board-cell-o{
+    display: none;    
+} */
+
+.cell-x-icon-path{
+    fill: #31C3BD ; 
+    stroke: #31C3BD ;
+}
+
+.cell-o-icon-path{
+    fill: #F2B137 ; 
+    stroke: #F2B137;
+}
+
+/* #cell-o-icon-1, #cell-o-icon-2, #cell-o-icon-3, 
+#cell-o-icon-4, #cell-o-icon-5, #cell-o-icon-6, 
+#cell-o-icon-7, #cell-o-icon-8, #cell-o-icon-9,
+#cell-x-icon-1, #cell-x-icon-2, #cell-x-icon-3, 
+#cell-x-icon-4, #cell-x-icon-5, #cell-x-icon-6, 
+#cell-x-icon-7, #cell-x-icon-8, #cell-x-icon-9{
+    display: none;
+} */
+
+.players-2{
+    display: none;
+}
+
+/* .players-1{
+    display: none;
+} */
+
+
+
+
+
+
+
+
+
+/* media query tablets */
+@media (min-width:429px) and (max-width: 835px) {
+      .new-game-menu{
+        display: none;
+        height: 471px;
+        width: 460px;
+        /* background-color: blue; */
+        margin-top: 277px;
+
+    }
+
+    .pick-player-card{
+        height: 205px;
+        width: 460px;
+    }
+
+    .players-selection-icons{
+        height: 52px;
+        width: 412px;
+    }
+
+    .icon1{
+        margin: 0 83px 0 91px;
+    }
+
+    .icon2{
+        height: 54px;
+        width: 198px ;
+        margin: 0 0 0 0;
+    }
+
+    .new-game-button{
+        width: 460px;
+    }
+
+
+    /* Game board */
+
+    .game-board-start{
+        display: block;
+        margin: 201px 0 0 0;
+    }
+
+    .game-board-header{
+        width: 457px;
+    }
+
+    .player-x-svg{
+        margin: 0 0 0 0;
+    }
+
+    .game-baord-cells{
+        width: 460px;
+    }
+
+    .cells{
+        width: 140px;
+    }
+
+
+    /* score screen */
+    .solo{
+        visibility: visible;
+        height: 200%;
+    }
+
+    .o-wins, .x-wins, .x-wins-restart, 
+.o-wins-multi, .x-wins-multi, .x-wins-multi-restart{
+        visibility: hidden;
+        height: 200px;
+        width: 100%;
+        margin: 150px auto 0 ;
+    }
+
+    .wins-loss-message{
+        width: 499px;
+    }
+
+    .x-wins-svg{
+        height: 52px;
+        width: 52px;
+    }
+
+    .o-wins-icon{
+        margin: 5px 0 0 0px;
+    }
+
+    .o-win-message, .x-win-message{
+        margin: 0 50px 0 0;
+        font-size: 40px;
+    }
+
+    .messages-x-multi-restart {
+        visibility: visible;
+    }
+}
+
+
+
+
+/* Desktop screens  */
+
+@media only screen and (min-width: 836px){
+    .new-game-menu{
+        display: none;
+        height: 471px;
+        width: 460px;
+        /* background-color: blue; */
+        margin-top: 277px;
+
+    }
+
+    .pick-player-card{
+        height: 205px;
+        width: 460px;
+    }
+
+    .players-selection-icons{
+        height: 52px;
+        width: 412px;
+    }
+
+    .icon1{
+        margin: 0 83px 0 91px;
+    }
+
+    .icon2{
+        height: 54px;
+        width: 198px ;
+        margin: 0 0 0 0;
+    }
+
+    .new-game-button{
+        width: 460px;
+    }
+
+
+    /* Game board */
+
+    .game-board-start{
+        display: block;
+        margin: 201px 0 0 0;
+    }
+
+    .game-board-header{
+        width: 457px;
+    }
+
+    .player-x-svg{
+        margin: 0 0 0 0;
+    }
+
+    .game-baord-cells{
+        width: 460px;
+    }
+
+    .cells{
+        width: 140px;
+    }
+
+
+    /* score screen */
+    .solo{
+        visibility: visible;
+        height: 200%;
+    }
+
+    .o-wins, .x-wins, .x-wins-restart, 
+.o-wins-multi, .x-wins-multi, .x-wins-multi-restart{
+        visibility: hidden;
+        height: 200px;
+        width: 100%;
+        margin: 150px auto 0 ;
+    }
+
+    .wins-loss-message{
+        width: 499px;
+    }
+
+    .x-wins-svg{
+        height: 52px;
+        width: 52px;
+    }
+
+    .o-wins-icon{
+        margin: 5px 0 0 0px;
+    }
+
+    .o-win-message, .x-win-message{
+        margin: 0 50px 0 0;
+        font-size: 40px;
+    }
+
+    .x-wins-multi-restart {
+        visibility: visible;
+    }
+
+
 }
