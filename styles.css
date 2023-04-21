@@ -205,8 +205,7 @@ html, body{
 } */
 
 .o-wins-background{
-    height: 615px;
-    width: 375px;
+    height: 900px;
     background: rgba(0, 0, 0, 0.5);
     mix-blend-mode: normal;
     margin: 0 auto ;
@@ -235,7 +234,7 @@ html, body{
     top: 225px;
     bottom: 219px ;
     height: 228px;
-    width: 375px;
+    width: 390px;
     background: #1F3641;
 }
 
